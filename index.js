@@ -15,16 +15,24 @@ app.get('/', async (req, res) => {
 })
 
 app.patch('/set', async (req, res) => {
-    const { link } = req.query
-    await db.put({ link: link }, 'link')
-    await res.redirect('/ok')
+    const auth = req.headers.authorization
+    if (auth !== process.env.KEY) {
+        res.status(401).send('Unauthorized')
+    } else {
+        if (req.body.link === undefined) {
+            res.status(400).send('Bad request')
+        } else {
+        const link = req.body.link
+        await db.put({ link: link }, 'link')
+        res.send('Link set to ' + link)
+    }
+}
 })
 
 app.get('/get', async (req, res) => {
-        const link = await db.get('link')
-        await res.status(200).send({link :link.link})
+    const link = await db.get('link')
+    await res.status(200).send({ link: link.link })
 })
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
