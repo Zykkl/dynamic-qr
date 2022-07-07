@@ -1,0 +1,31 @@
+{
+    "name": "dynamic-qr-code",
+    "description": "Dynamic QR-Code", 
+    "runtime": "nodejs14.x",
+    "env": [
+        {
+            "key": "PROJECT_KEY",
+            "description": "Deta Project Key",
+            "value": "",
+            "required": true
+        },
+        {
+            "key": "DB_NAME",
+            "description": "Deta Base Name",
+            "value": "dynamic-qr-code-db",
+            "required": true
+        },
+        {
+            "key": "AUTH",
+            "description": "/set password, Basic encryption, without 'Basic ' part",
+            "value": "",
+            "required": true
+        },
+        {
+            "key":"PORT",
+            "description": "Port of the Express Server (dev-env only)",
+            "value": "",
+            "required": false
+        }
+    ]
+}
