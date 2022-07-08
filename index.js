@@ -15,7 +15,7 @@ app.get('/', async (req, res) => {
 
 app.patch('/set', async (req, res) => {
     const auth = req.headers.authorization
-    if (auth !== 'Basic ' + process.env.KEY) {
+    if (auth !== 'Basic ' + process.env.AUTH) {
         res.status(401).send('Unauthorized')
     } else {
         if (req.body.link === undefined) {
