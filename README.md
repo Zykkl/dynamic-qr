@@ -6,4 +6,4 @@ Was meant to be used for one small business, ended up being loved by many.
 
 # Self Hosting
 
-[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/zykkl/dynamic-qr)
+[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/zykkl/dynamic-qr/tree/public-wip)
